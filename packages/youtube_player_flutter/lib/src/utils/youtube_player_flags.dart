@@ -28,6 +28,16 @@ class YoutubePlayerFlags {
   ///
   /// Default is false.
   final bool isLive;
+  
+  /// If true, hides the YouTube player annotation. Default is false.
+  ///
+  /// Forcing annotation to hide is a hacky way. Although this shouldn't be against Youtube TOS, the author doesn't guarantee
+  /// and won't be responsible for any casualties regarding the YouTube TOS violation.
+  ///
+  /// Changing this flag will have no effect on iOS.
+  ///
+  /// Default is false.
+  final bool forceHideAnnotation;
 
   /// Hides thumbnail if true.
   ///
@@ -74,6 +84,7 @@ class YoutubePlayerFlags {
     this.autoPlay = true,
     this.mute = false,
     this.isLive = false,
+    this.forceHideAnnotation = false,
     this.hideThumbnail = false,
     this.disableDragSeek = false,
     this.enableCaption = true,
@@ -91,6 +102,7 @@ class YoutubePlayerFlags {
     bool mute,
     bool showVideoProgressIndicator,
     bool isLive,
+    bool forceHideAnnotation,
     bool hideThumbnail,
     bool disableDragSeek,
     bool loop,
@@ -105,6 +117,7 @@ class YoutubePlayerFlags {
       captionLanguage: captionLanguage ?? this.captionLanguage,
       disableDragSeek: disableDragSeek ?? this.disableDragSeek,
       enableCaption: enableCaption ?? this.enableCaption,
+      forceHideAnnotation: forceHideAnnotation ?? this.forceHideAnnotation,
       hideControls: hideControls ?? this.hideControls,
       hideThumbnail: hideThumbnail ?? this.hideThumbnail,
       isLive: isLive ?? this.isLive,
