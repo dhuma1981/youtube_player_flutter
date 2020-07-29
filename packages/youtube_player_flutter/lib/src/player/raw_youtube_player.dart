@@ -225,7 +225,8 @@ class _RawYoutubePlayerState extends State<RawYoutubePlayer>
     );
   }
 
-  String get player => '''
+  String get player { 
+    var _player = '''
     <!DOCTYPE html>
     <html>
     <head>
@@ -388,6 +389,8 @@ class _RawYoutubePlayerState extends State<RawYoutubePlayer>
     </body>
     </html>
   ''';
+  return _player;
+  }
 
   String boolean({@required bool value}) => value ? "'1'" : "'0'";
 
