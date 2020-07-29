@@ -237,10 +237,23 @@ class _RawYoutubePlayerState extends State<RawYoutubePlayer>
                 background-color: #000000;
                 overflow: hidden;
                 position: fixed;
+    ''';
+    if (!Platform.isIOS && controller.flags.forceHideAnnotation) {
+      _player += '''
+                height: 1000%;
+                width: 1000%;
+                transform: scale(0.1);
+                transform-origin: left top;
+      ''';
+    } else {
+      _player += '''
                 height: 100%;
                 width: 100%;
-                pointer-events: none;
+      ''';
+    }
+    _player += '''
             }
+        </style>
         </style>
         <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
     </head>
