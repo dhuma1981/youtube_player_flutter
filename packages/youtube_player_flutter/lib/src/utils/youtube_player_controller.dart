@@ -251,8 +251,15 @@ class YoutubePlayerController extends ValueNotifier<YoutubePlayerValue> {
   }
 
   /// Sets the size in pixels of the player.
-  void setSize(Size size) =>
-      _callMethod('setSize(${size.width}, ${size.height})');
+  void setSize(Size size) {
+    var _width = size.width;
+    var _height = size.height;
+    if (flags.forceHideAnnotation) {
+      _width *= 100;
+      _height *= 100;
+    }
+    _callMethod('setSize($_width, $_height)');
+  }
 
   /// Fits the video to screen width.
   void fitWidth(Size screenSize) {
