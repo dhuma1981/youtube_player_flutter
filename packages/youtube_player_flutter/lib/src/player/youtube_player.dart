@@ -131,6 +131,9 @@ class YoutubePlayer extends StatefulWidget {
   /// Default is false.
   /// {@endtemplate}
   final bool showVideoProgressIndicator;
+  
+  //To show and hide fullscreen button option from the player.
+  final bool showFullScreenButton;
 
   /// Creates [YoutubePlayer] widget.
   const YoutubePlayer({
@@ -150,6 +153,7 @@ class YoutubePlayer extends StatefulWidget {
     this.actionsPadding = const EdgeInsets.all(8.0),
     this.thumbnail,
     this.showVideoProgressIndicator = false,
+    this.showFullScreenButton = true,
   });
 
   /// Converts fully qualified YouTube Url to video id.
@@ -372,6 +376,7 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
                                 ),
                                 RemainingDuration(),
                                 const PlaybackSpeedButton(),
+                                if (widget.showFullScreenButton)
                                 FullScreenButton(),
                               ],
                         ),
