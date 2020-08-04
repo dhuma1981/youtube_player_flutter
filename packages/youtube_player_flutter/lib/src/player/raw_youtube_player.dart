@@ -241,9 +241,9 @@ class _RawYoutubePlayerState extends State<RawYoutubePlayer>
     ''';
     if (!Platform.isIOS && controller.flags.forceHideAnnotation) {
       _player += '''
-                height: 1000%;
-                width: 1000%;
-                transform: scale(0.1);
+                height: 200%;
+                width: 200%;
+                transform: scale(0.5);
                 transform-origin: left top;
       ''';
     } else {
